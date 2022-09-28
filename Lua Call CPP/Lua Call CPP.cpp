@@ -1,5 +1,5 @@
-﻿#include "OpenLuaStates.h"
-#include "LuaHelperFunctions.h"
+﻿#include "OpenLua.h"
+#include "LuaHelper.h"
 #include "RockPaperScissors.h"
 #include <iostream>
 #include <string>
@@ -14,11 +14,11 @@ int main()
 	luaL_openlibs(pL);
 
 	//register the functions with lua
-	lua_register(pL, "cpp_GetAIMove", cpp_GetAIMove);
-	lua_register(pL, "cpp_EvaluateTheGuesses", cpp_EvaluateTheGuesses);
+	lua_register(pL, "GetAIMoveWrapper", GetAIMoveWrapper);
+	lua_register(pL, "EvaluateTheGuessesWrapper", EvaluateTheGuessesWrapper);
 
 	//run the script
-	RunLuaScript(pL, "Rock_Paper_Scissors_Using_C++_Funcs.lua");
+	RunLuaScript(pL, "lua_using_cpp.lua");
 
 	//tidy up
 	lua_close(pL);

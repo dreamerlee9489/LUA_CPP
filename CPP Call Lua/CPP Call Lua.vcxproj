@@ -139,8 +139,8 @@
     <None Include="cpp_using_lua.lua" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Common\LuaHelperFunctions.h" />
-    <ClInclude Include="..\Common\OpenLuaStates.h" />
+    <ClInclude Include="..\Common\LuaHelper.h" />
+    <ClInclude Include="..\Common\OpenLua.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

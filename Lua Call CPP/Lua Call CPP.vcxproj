@@ -137,11 +137,11 @@
     <ClCompile Include="Lua Call CPP.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Rock_Paper_Scissors_Using_C++_Funcs.lua" />
+    <None Include="lua_using_cpp.lua" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Common\LuaHelperFunctions.h" />
-    <ClInclude Include="..\Common\OpenLuaStates.h" />
+    <ClInclude Include="..\Common\LuaHelper.h" />
+    <ClInclude Include="..\Common\OpenLua.h" />
     <ClInclude Include="..\Common\RockPaperScissors.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -20,19 +20,19 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Rock_Paper_Scissors_Using_C++_Funcs.lua">
-      <Filter>资源文件</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\Common\LuaHelperFunctions.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\OpenLuaStates.h">
+    <ClInclude Include="..\Common\OpenLua.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="..\Common\RockPaperScissors.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\Common\LuaHelper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lua_using_cpp.lua">
+      <Filter>源文件</Filter>
+    </None>
   </ItemGroup>
 </Project>

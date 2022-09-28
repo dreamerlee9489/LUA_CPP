@@ -1,7 +1,7 @@
 ﻿#ifndef ROCK_PAPER_SCISSORS_H
 #define ROCK_PAPER_SCISSORS_H
 
-#include "OpenLuaStates.h"
+#include "OpenLua.h"
 #include <string>
 #include <iostream>
 
@@ -17,11 +17,11 @@ std::string GetAIMove()
 	return PossiblePlayStrings[rand() % 3];
 }
 
-//----------------------- cpp_GetAIMove ---------------------------------------
+//----------------------- GetAIMoveWrapper ---------------------------------------
 //
 //  this is the wrapper written for GetAIMove to expose the function to lua
 //-----------------------------------------------------------------------------
-int cpp_GetAIMove(lua_State* pL)
+int GetAIMoveWrapper(lua_State* pL)
 {
 	//get the number of parameters passed to this function from the lua
 	//stack and make sure it is equal to the correct number of parameters
@@ -30,7 +30,7 @@ int cpp_GetAIMove(lua_State* pL)
 
 	if (n != 0)
 	{
-		std::cout << "\n[C++]: Wrong number of arguments for cpp_GetAIMove";
+		std::cout << "\n[C++]: Wrong number of arguments for GetAIMoveWrapper";
 
 		return 0;
 	}
@@ -98,11 +98,11 @@ void EvaluateTheGuesses(std::string user_guess,
 	}
 }
 
-//------------------------------ cpp_EvaluateTheGuesses -----------------------
+//------------------------------ EvaluateTheGuessesWrapper -----------------------
 //
 //  the wrapper for EvaluateTheGuesses
 //-----------------------------------------------------------------------------
-int cpp_EvaluateTheGuesses(lua_State* pL)
+int EvaluateTheGuessesWrapper(lua_State* pL)
 {
 	//get the number of parameters passed to this function from the lua
 	//stack and make sure it is equal to the correct number of parameters

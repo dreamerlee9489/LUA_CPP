@@ -20,16 +20,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="cpp_using_lua.lua">
-      <Filter>资源文件</Filter>
-    </None>
+    <ClInclude Include="..\Common\LuaHelper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\OpenLua.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Common\LuaHelperFunctions.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\OpenLuaStates.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
+    <None Include="cpp_using_lua.lua">
+      <Filter>源文件</Filter>
+    </None>
   </ItemGroup>
 </Project>

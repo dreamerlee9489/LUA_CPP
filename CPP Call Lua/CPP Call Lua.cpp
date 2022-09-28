@@ -1,5 +1,5 @@
-﻿#include "OpenLuaStates.h"
-#include "LuaHelperFunctions.h"
+﻿#include "OpenLua.h"
+#include "LuaHelper.h"
 #include <iostream>
 #include <string>
 using namespace std;
