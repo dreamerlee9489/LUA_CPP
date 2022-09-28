@@ -1,4 +1,5 @@
 # LUA_CPP
-boost v1.80.0
-luabind v0.9.1
+> 库版本  
+- lua v5.1  
+- luabind v0.9.1  
  

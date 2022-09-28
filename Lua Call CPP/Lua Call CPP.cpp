@@ -1,17 +1,9 @@
-﻿extern "C"
-{
-#include <lua.h>
-#include <lualib.h>
-#include <lauxlib.h>
-}
-
+﻿#include "OpenLuaStates.h"
+#include "LuaHelperFunctions.h"
+#include "RockPaperScissors.h"
 #include <iostream>
 #include <string>
 using namespace std;
-
-#pragma comment(lib, "lua5.1.lib")
-#include "LuaHelperFunctions.h"
-#include "RockPaperScissors.h"
 
 int main()
 {

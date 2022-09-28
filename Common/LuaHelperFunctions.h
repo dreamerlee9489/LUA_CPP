@@ -1,24 +1,9 @@
 ﻿#ifndef LUA_HELPER_FUNCS
 #define LUA_HELPER_FUNCS
 
-//get rid of the annoying but unavoidable forcing int to bool warning
-#pragma warning (disable:4800)
-
-extern "C"
-{
-#include <lua.h>
-#include <lualib.h>
-#include <lauxlib.h>
-}
-
-
+#include "OpenLuaStates.h"
 #include <string>
-#include "./misc/utils.h"
-#include "./misc/Stream_Utility_Functions.h"
-
-
-
-
+#include <stdexcept>
 
 struct LuaExceptionGuard
 {
@@ -31,8 +16,6 @@ struct LuaExceptionGuard
 		lua_close(pLua);
 	}
 };
-
-
 
 //makes all the lua libraries available
 inline void OpenLuaLibraries(lua_State* pLua)
@@ -53,7 +36,7 @@ inline void RunLuaScript(lua_State* L, const char* script_name)
 {
 	if (int error = luaL_dofile(L, script_name) != 0)
 	{
-		throw std::runtime_error("ERROR(" + ttos(error) + "): Problem with lua script file " + script_name);
+		throw std::runtime_error("ERROR(" + std::to_string(error) + "): Problem with lua script file " + script_name);
 	}
 }
 
@@ -85,7 +68,6 @@ inline T PopLuaNumber(lua_State* pL, const char* name)
 
 	return val;
 }
-
 
 //--------------------------- PopLuaString ------------------------------------
 //-----------------------------------------------------------------------------
@@ -196,7 +178,5 @@ inline T LuaPopNumberFieldFromTable(lua_State* L, const char* key)
 
 	return val;
 }
-
-
 
 #endif

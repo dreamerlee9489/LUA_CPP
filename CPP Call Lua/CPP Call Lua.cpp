@@ -1,19 +1,8 @@
-﻿extern "C"
-{
-#include <lua.h>
-#include <lualib.h>
-#include <lauxlib.h>
-}
-
-#pragma comment(lib, "lua5.1.lib")
-
+﻿#include "OpenLuaStates.h"
+#include "LuaHelperFunctions.h"
 #include <iostream>
 #include <string>
 using namespace std;
-
-#include "LuaHelperFunctions.h"
-
-
 
 int main()
 {
@@ -50,12 +39,7 @@ int main()
 	cout << "\n\n[C++]: name = " << name
 		<< "\n[C++]: age  = " << age << endl;
 
-
-
-
-
 	cout << "\n\n[C++]:  2. Retrieving simple table";
-
 
 	//put the table on the stack
 	lua_getglobal(pL, "simple_table");
@@ -105,8 +89,6 @@ int main()
 
 	}
 
-
-
 	cout << "\n\n[C++]: 3. Calling a simple Lua function: add(a,b)";
 
 	//get the function from the global table and push it on the stack
@@ -133,9 +115,6 @@ int main()
 	lua_pop(pL, 1);
 
 	cout << "\n\n[C++]: <lua>add(5,8) = " << result;
-
-
-
 
 	//tidy up
 	lua_close(pL);
