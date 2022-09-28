@@ -17,10 +17,9 @@ struct LuaExceptionGuard
 	}
 };
 
-//makes all the lua libraries available
+//打开 lua 库
 inline void OpenLuaLibraries(lua_State* pLua)
 {
-	//open the libraries
 	luaopen_base(pLua);
 	luaopen_string(pLua);
 	luaopen_table(pLua);
@@ -30,7 +29,7 @@ inline void OpenLuaLibraries(lua_State* pLua)
 
 //------------------------------- RunScript -----------------------------------
 //
-//  runs a script file
+//  运行脚本文件
 //-----------------------------------------------------------------------------
 inline void RunLuaScript(lua_State* L, const char* script_name)
 {
@@ -42,7 +41,7 @@ inline void RunLuaScript(lua_State* L, const char* script_name)
 
 //----------------------------- PopLuaNumber-----------------------------------
 //
-//  a function template to retrieve a number from the lua stack
+// 从 lua 堆栈中检索数字的函数模板
 //-----------------------------------------------------------------------------
 template <class T>
 inline T PopLuaNumber(lua_State* pL, const char* name)
@@ -51,8 +50,7 @@ inline T PopLuaNumber(lua_State* pL, const char* name)
 
 	lua_getglobal(pL, name);
 
-	//check that the variable is the correct type. If it is not throw an
-	//exception
+	//检查变量是否是正确的类型。 如果不抛出异常
 	if (!lua_isnumber(pL, 1))
 	{
 		std::string err("<PopLuaNumber> Cannot retrieve: ");
@@ -60,10 +58,10 @@ inline T PopLuaNumber(lua_State* pL, const char* name)
 		throw std::runtime_error(err + name);
 	}
 
-	//grab the value, cast to the correct type and return
+	//获取值，转换为正确的类型并返回
 	T val = (T)lua_tonumber(pL, 1);
 
-	//remove the value from the stack
+	//从堆栈中删除值
 	lua_pop(pL, 1);
 
 	return val;
@@ -77,8 +75,7 @@ inline std::string PopLuaString(lua_State* pL, const char* name)
 
 	lua_getglobal(pL, name);
 
-	//check that the variable is the correct type. If it is not throw an
-	//exception
+	//检查变量是否是正确的类型。 如果不抛出异常
 	if (!lua_isstring(pL, 1))
 	{
 		std::string err("<PopLuaString> Cannot retrieve: ");
@@ -86,10 +83,10 @@ inline std::string PopLuaString(lua_State* pL, const char* name)
 		throw std::runtime_error(err + name);
 	}
 
-	//grab the value, cast to the correct type and return
+	//获取值，转换为正确的类型并返回
 	std::string s = lua_tostring(pL, 1);
 
-	//remove the value from the stack
+	//从堆栈中删除值
 	lua_pop(pL, 1);
 
 	return s;
@@ -103,8 +100,7 @@ inline bool PopLuaBool(lua_State* pL, const char* name)
 
 	lua_getglobal(pL, name);
 
-	//check that the variable is the correct type. If it is not throw an
-	//exception
+	//检查变量是否是正确的类型。 如果不抛出异常
 	if (!lua_isstring(pL, 1))
 	{
 		std::string err("<PopLuaBool> Cannot retrieve: ");
@@ -112,10 +108,10 @@ inline bool PopLuaBool(lua_State* pL, const char* name)
 		throw std::runtime_error(err + name);
 	}
 
-	//grab the value, cast to the correct type and return
+	//获取值，转换为正确的类型并返回
 	bool b = lua_toboolean(pL, 1);
 
-	//remove the value from the stack
+	//从堆栈中删除值
 	lua_pop(pL, 1);
 
 	return b;
@@ -126,15 +122,13 @@ inline bool PopLuaBool(lua_State* pL, const char* name)
 inline std::string LuaPopStringFieldFromTable(lua_State* L, const char* key)
 {
 
-	//push the key onto the stack
+	//将key推入堆栈
 	lua_pushstring(L, key);
 
-	//table is now at -2 (key is at -1). lua_gettable now pops the key off
-	//the stack and then puts the data found at the key location on the stack
+	//表现在位于-2（键位于-1）。 lua_gettable 现在将键从堆栈中弹出，然后将在键位置找到的数据放入堆栈
 	lua_gettable(L, -2);
 
-	//check that the variable is the correct type. If it is not throw an
-	//exception
+	//检查变量是否是正确的类型。 如果不抛出异常
 	if (!lua_isstring(L, -1))
 	{
 		std::string err("<LuaPopStringFieldFromTable> Cannot retrieve: ");
@@ -142,7 +136,7 @@ inline std::string LuaPopStringFieldFromTable(lua_State* L, const char* key)
 		throw std::runtime_error(err + key);
 	}
 
-	//grab the data
+	//抓取数据
 	std::string s = lua_tostring(L, -1);
 
 	lua_pop(L, 1);
@@ -155,15 +149,13 @@ inline std::string LuaPopStringFieldFromTable(lua_State* L, const char* key)
 template <class T>
 inline T LuaPopNumberFieldFromTable(lua_State* L, const char* key)
 {
-	//push the key onto the stack
+	//将key推入堆栈
 	lua_pushstring(L, key);
 
-	//table is now at -2 (key is at -1). lua_gettable now pops the key off
-	//the stack and then puts the data found at the key location on the stack
+	//表现在位于-2（键位于-1）。lua_gettable 现在将键从堆栈中弹出，然后将在键位置找到的数据放入堆栈
 	lua_gettable(L, -2);
 
-	//check that the variable is the correct type. If it is not throw an
-	//exception
+	//检查变量是否是正确的类型。 如果不抛出异常
 	if (!lua_isnumber(L, -1))
 	{
 		std::string err("<LuaPopNumberFieldFromTable> Cannot retrieve: ");
@@ -171,7 +163,7 @@ inline T LuaPopNumberFieldFromTable(lua_State* L, const char* key)
 		throw std::runtime_error(err + key);
 	}
 
-	//grab the data
+	//抓取数据
 	T val = (T)lua_tonumber(L, -1);
 
 	lua_pop(L, 1);

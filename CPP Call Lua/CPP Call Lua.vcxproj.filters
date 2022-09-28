@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CPP Call Lua.cpp">
+    <ClCompile Include="Cpp Call Lua.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lua Call CPP", "Lua Call CPP\Lua Call CPP.vcxproj", "{7F4CD479-5628-4D40-AE2F-F0DE4C62CAE1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lua Call Cpp", "Lua Call CPP\Lua Call CPP.vcxproj", "{7F4CD479-5628-4D40-AE2F-F0DE4C62CAE1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPP Call Lua", "CPP Call Lua\CPP Call Lua.vcxproj", "{DC6DDEDD-0861-4F62-9521-6BF7553CB84D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Cpp Call Lua", "CPP Call Lua\CPP Call Lua.vcxproj", "{DC6DDEDD-0861-4F62-9521-6BF7553CB84D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Scripted FSM", "Scripted FSM\Scripted FSM.vcxproj", "{3FF4CF9F-9F2D-46B0-A03F-64C9E56616A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,14 @@ Global
 		{DC6DDEDD-0861-4F62-9521-6BF7553CB84D}.Release|x64.Build.0 = Release|x64
 		{DC6DDEDD-0861-4F62-9521-6BF7553CB84D}.Release|x86.ActiveCfg = Release|Win32
 		{DC6DDEDD-0861-4F62-9521-6BF7553CB84D}.Release|x86.Build.0 = Release|Win32
+		{3FF4CF9F-9F2D-46B0-A03F-64C9E56616A3}.Debug|x64.ActiveCfg = Debug|x64
+		{3FF4CF9F-9F2D-46B0-A03F-64C9E56616A3}.Debug|x64.Build.0 = Debug|x64
+		{3FF4CF9F-9F2D-46B0-A03F-64C9E56616A3}.Debug|x86.ActiveCfg = Debug|Win32
+		{3FF4CF9F-9F2D-46B0-A03F-64C9E56616A3}.Debug|x86.Build.0 = Debug|Win32
+		{3FF4CF9F-9F2D-46B0-A03F-64C9E56616A3}.Release|x64.ActiveCfg = Release|x64
+		{3FF4CF9F-9F2D-46B0-A03F-64C9E56616A3}.Release|x64.Build.0 = Release|x64
+		{3FF4CF9F-9F2D-46B0-A03F-64C9E56616A3}.Release|x86.ActiveCfg = Release|Win32
+		{3FF4CF9F-9F2D-46B0-A03F-64C9E56616A3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

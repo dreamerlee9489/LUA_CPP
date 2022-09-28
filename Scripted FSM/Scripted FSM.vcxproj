@@ -18,13 +18,41 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="Miner.h" />
+    <ClInclude Include="ScriptedFSM.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Common\luabind-0.9.1\src\class.cpp" />
+    <ClCompile Include="..\Common\luabind-0.9.1\src\class_info.cpp" />
+    <ClCompile Include="..\Common\luabind-0.9.1\src\class_registry.cpp" />
+    <ClCompile Include="..\Common\luabind-0.9.1\src\class_rep.cpp" />
+    <ClCompile Include="..\Common\luabind-0.9.1\src\create_class.cpp" />
+    <ClCompile Include="..\Common\luabind-0.9.1\src\error.cpp" />
+    <ClCompile Include="..\Common\luabind-0.9.1\src\exception_handler.cpp" />
+    <ClCompile Include="..\Common\luabind-0.9.1\src\function.cpp" />
+    <ClCompile Include="..\Common\luabind-0.9.1\src\inheritance.cpp" />
+    <ClCompile Include="..\Common\luabind-0.9.1\src\link_compatibility.cpp" />
+    <ClCompile Include="..\Common\luabind-0.9.1\src\object_rep.cpp" />
+    <ClCompile Include="..\Common\luabind-0.9.1\src\open.cpp" />
+    <ClCompile Include="..\Common\luabind-0.9.1\src\pcall.cpp" />
+    <ClCompile Include="..\Common\luabind-0.9.1\src\scope.cpp" />
+    <ClCompile Include="..\Common\luabind-0.9.1\src\stack_content_by_name.cpp" />
+    <ClCompile Include="..\Common\luabind-0.9.1\src\weak_ref.cpp" />
+    <ClCompile Include="..\Common\luabind-0.9.1\src\wrapper_base.cpp" />
+    <ClCompile Include="Miner.cpp" />
+    <ClCompile Include="ScriptedFSM.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FSMScript.lua" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{dc6ddedd-0861-4f62-9521-6bf7553cb84d}</ProjectGuid>
-    <RootNamespace>CPPCallLua</RootNamespace>
+    <ProjectGuid>{3ff4cf9f-9f2d-46b0-a03f-64c9e56616a3}</ProjectGuid>
+    <RootNamespace>ScriptedFSM</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Cpp Call Lua</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -108,13 +136,10 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\Common;..\Common\lua-5.1\include;..\Common\luabind-0.9.1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\Common\lua-5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>lua5.1.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -133,16 +158,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Cpp Call Lua.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="cpp_using_lua.lua" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\Common\LuaHelper.h" />
-    <ClInclude Include="..\Common\OpenLua.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
