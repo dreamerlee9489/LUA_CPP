@@ -6,7 +6,7 @@
 #include <iostream>
 
 const int         NumPlayStrings = 3;
-const std::string PossiblePlayStrings[NumPlayStrings] = { "scissors", "rock", "paper" };
+const std::string PossiblePlayStrings[NumPlayStrings] = { "剪刀", "石头", "布" };
 
 //-------------------------- GetAIMove ----------------------------------------
 //
@@ -77,24 +77,24 @@ void EvaluateTheGuesses(std::string user_guess,
 	  {-1,1,0}
 	};
 
-	std::cout << "\nuser guess..." + user_guess + "  comp guess..." + comp_guess;
+	std::cout << "\n[C++] 用户猜拳：" + user_guess + "  电脑猜拳：" + comp_guess;
 
 	if (score_table[GuessToIndex(user_guess)][GuessToIndex(comp_guess)] == 1)
 	{
-		std::cout << "\nYou have won this round!";
+		std::cout << "\n[C++] 你赢得了本局胜利！";
 
 		++user_score;
 	}
 	else if (score_table[GuessToIndex(user_guess)][GuessToIndex(comp_guess)] == -1)
 	{
-		std::cout << "\nComputer wins this round.";
+		std::cout << "\n[C++] 电脑赢得了本局胜利！";
 
 		++comp_score;
 	}
 
 	else
 	{
-		std::cout << "\nIt's a draw!";
+		std::cout << "\n[C++] 平局！";
 	}
 }
 

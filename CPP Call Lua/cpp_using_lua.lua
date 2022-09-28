@@ -2,13 +2,13 @@
 
 --global string and number types
 
-name   = "Spiderman";
+name   = "蜘蛛侠";
 age    = 29;
 
 
 --global table creation
 
-simple_table = {name="Dan Dare", age=20};
+simple_table = {name="钢铁侠", age=20};
 
 
 --a simple function to add two numbers
@@ -20,4 +20,4 @@ function add(a,b)
 end;
 
  
-print("[lua]: Finished running script \"cpp_using_lua.lua\"");
+print("[Lua]: \"cpp_using_lua.lua\" 脚本运行完成！");

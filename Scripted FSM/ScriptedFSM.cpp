@@ -86,7 +86,7 @@ int main()
 	RunLuaScript(pLua, "FSMScript.lua");
 
 	//create a miner
-	Miner bob("bob");
+	Miner bob("Bob");
 
 	//grab the global table from the lua state. This will inlclude
 	//all the functions and variables defined in the scripts run so far

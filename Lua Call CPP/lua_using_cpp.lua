@@ -24,15 +24,15 @@ loop = true;
 while loop == true do
 
     --let the user know the current score
-    print("\n\nUser: "..user_score.." Computer: "..comp_score)
+    print("\n[Lua] 用户："..user_score.." 电脑："..comp_score)
 
-    print("Input your guess r/p/s  [enter q to quit]")
+    print("[Lua] 用户猜拳： 剪刀(s)/石头(r)/布(p)  [Q键退出]")
 
     --grab input from the user via the keyboard
     user_guess = io.stdin:read '*l';
 
     --create a table to convert user input into a play string
-    local possible_moves = {s = "scissors", r = "rock", p = "paper"};
+    local possible_moves = {s = "剪刀", r = "石头", p = "布"};
     
     if user_guess == "q" then
 
@@ -50,7 +50,7 @@ while loop == true do
 
     else
 
-        print ("Invalid input, try again");
+        print ("[Lua] 无效输入，请重试");
 
     end   
 end;

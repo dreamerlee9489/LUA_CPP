@@ -14,7 +14,7 @@ int main()
 
 	RunLuaScript(pL, "cpp_using_lua.lua");
 
-	cout << "\n[C++]:  1. Assigning lua string and number types to C++ std::string & int types\n";
+	cout << "\n[C++]: 1. 将 lua 字符串和数字类型分配给 C++ std::string 和 int 类型\n";
 
 	//reset the stack index
 	lua_settop(pL, 0);
@@ -39,7 +39,7 @@ int main()
 	cout << "\n\n[C++]: name = " << name
 		<< "\n[C++]: age  = " << age << endl;
 
-	cout << "\n\n[C++]:  2. Retrieving simple table";
+	cout << "\n\n[C++]: 2. 检索 simple_table";
 
 	//put the table on the stack
 	lua_getglobal(pL, "simple_table");
@@ -89,7 +89,7 @@ int main()
 
 	}
 
-	cout << "\n\n[C++]: 3. Calling a simple Lua function: add(a,b)";
+	cout << "\n\n[C++]: 3. 调用一个 Lua 函数：add(a,b)";
 
 	//get the function from the global table and push it on the stack
 	lua_getglobal(pL, "add");
