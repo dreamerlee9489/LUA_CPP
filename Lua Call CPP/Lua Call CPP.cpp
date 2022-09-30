@@ -1,26 +1,27 @@
-﻿#include "OpenLua.h"
-#include "LuaHelper.h"
+﻿#include "LuaHelper.h"
+#include "OpenLua.h"
 #include "RockPaperScissors.h"
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 int main()
 {
-	//create a lua state
+	// create a lua state
 	lua_State* pL = lua_open();
 
-	//open the lua libaries - new in lua5.1
+	// open the lua libaries - new in lua5.1
 	luaL_openlibs(pL);
 
-	//register the functions with lua
+	// register the functions with lua
 	lua_register(pL, "GetAIMoveWrapper", GetAIMoveWrapper);
 	lua_register(pL, "EvaluateTheGuessesWrapper", EvaluateTheGuessesWrapper);
 
-	//run the script
+	// run the script
 	RunLuaScript(pL, "lua_using_cpp.lua");
 
-	//tidy up
+	// tidy up
 	lua_close(pL);
 
 	cout << "\n\n\n";
